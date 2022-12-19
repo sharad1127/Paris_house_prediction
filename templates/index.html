@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- 'alcohol',
+ 'malic_acid',
+ 'ash',
+ 'alcalinity_of_ash',
+ 'magnesium',
+ 'total_phenols',
+ 'flavanoids',
+ 'nonflavanoid_phenols',
+ 'proanthocyanins',
+ 'color_intensity',
+ 'hue',
+ 'od280/od315_of_diluted_wines',
+ 'proline' -->
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Paris house price prediction</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <div>
+          <label>squareMeters : </label>
+          <input type="text" name="Enter Area in Square meter" placeholder="Square Meter" required="required" />
+        </div>
+        <br />
+        <div>
+          <label>numberOfRooms : </label>
+          <input type="text" name="numberOfRooms" placeholder="numberOfRooms" required="required" />
+        </div>
+        <br />
+
+        <div>
+          <label>hasYard: </label>
+          <input
+            type="text"
+            name="hasYard"
+            placeholder="hasYard  "
+            required="required"
+          />
+        </div>
+        <br />
+
+        <div>
+          <label>hasPool : </label>
+          <input
+            type="text"
+            name="hasPool"
+            placeholder="hasPool "
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>floors : </label>
+          <input
+            type="text"
+            name="floors"
+            placeholder="floors"
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>cityCode : </label>
+          <input
+            type="text"
+            name="cityCode"
+            placeholder="cityCode"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>numPrevOwners : </label>
+          <input
+            type="text"
+            name="numPrevOwners"
+            placeholder="numPrevOwners"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>cityPartRange : </label>
+          <input
+            type="text"
+            name="cityPartRange"
+            placeholder="cityPartRange"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>made: </label>
+          <input
+            type="text"
+            name="made"
+            placeholder="made"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>isNewBuilt : </label>
+          <input
+            type="text"
+            name="isNewBuilt"
+            placeholder="isNewBuilt"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>hasStormProtector : </label>
+          <input
+            type="text"
+            name="hasStormProtector"
+            placeholder="hasStormProtector"
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>basement : </label>
+          <input
+            type="text"
+            name="basement"
+            placeholder="basement"
+            required="required"
+          />
+        </div>
+        <br />
+
+        <div>
+          <label>attic  : </label>
+          <input
+            type="text"
+            name="attic"
+            placeholder="attic"
+            required="required"
+          />
+        </div>
+        <br />
+
+        <div>
+          <label>garage : </label>
+          <input
+            type="text"
+            name="garage"
+            placeholder="garage"
+            required="required"
+          />
+        </div>
+        <br />
+        <div>
+          <label>hasStorageRoom : </label>
+          <input
+            type="text"
+            name="hasStorageRoom"
+            placeholder="hasStorageRoom"
+            required="required"
+          />
+        </div>
+        <br />
+        <div>
+          <label>hasGuestRoom : </label>
+          <input
+            type="text"
+            name="hasGuestRoom"
+            placeholder="hasGuestRoom"
+            required="required"
+          />
+        </div>
+        <br />
+        <div>
+          <label>price : </label>
+          <input
+            type="text"
+            name="price"
+            placeholder="price"
+            required="required"
+          />
+        </div>
+        <br />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+
+      <br />
+      <br />
+      {{ prediction_text }}
+    </div>
+  </body>
+</html>
